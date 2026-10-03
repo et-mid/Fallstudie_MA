@@ -1,0 +1,24 @@
+[browser]
+gatherUsageStats = false   # Keine Telemetrie an Streamlit senden
+
+[server]
+headless = false
+port = 8501
+
+# Das Entwurfssystem („Industry") ist eine feste helle Palette: Papierton,
+# Tuscheschwarz, ein gedecktes Blau als einziger Akzent. Es hat keine dunkle
+# Fassung. Deshalb wird das Thema hier festgelegt statt dem Betriebssystem
+# überlassen — sonst bliebe im dunklen Modus schwarze Schrift auf schwarzem
+# Grund stehen, weil die eingespielten Farben aus dem Entwurf stammen und
+# Streamlit den Untergrund malt.
+#
+# Die Werte sind dieselben Token wie in ui/design.py; sie färben die
+# Bedienelemente, die Streamlit selbst zeichnet und an die kein CSS-Selektor
+# verlässlich herankommt (Dateiauswahl, Auswahlfelder, Fortschrittsbalken).
+[theme]
+base = "light"
+primaryColor = "#5980a6"            # --color-accent
+backgroundColor = "#f2f2f3"         # --color-bg
+secondaryBackgroundColor = "#e9e9ea"  # --color-surface
+textColor = "#1d1f20"               # --color-text
+font = "sans serif"

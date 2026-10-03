@@ -1,0 +1,51 @@
+# Python-Umgebung (reproduzierbar via requirements.txt, nicht versionieren)
+venv/
+ven/
+# Trainingsumgebung mit CUDA-torch (scratchpad/ft_*.py)
+venv-ft/
+__pycache__/
+*.pyc
+
+# Aus data/ gehört NICHTS ins Repository. Der Ordner enthält ausschließlich
+# Kundendokumente und daraus abgeleitete Inhalte — Gliederung, Standard, Ground
+# Truth, OCR-Zwischenstände, Vektorindizes. Laut AGENT_BRIEFING.md bleibt beides
+# lokal: keine Übertragung an externe Dienste oder ins Internet.
+#
+# Bewusst pauschal statt Ordner für Ordner. Eine einzelne vergessene Zeile hat
+# beinahe die Abschnittstexte der historischen Lastenhefte in einen Commit
+# gebracht — die Verallgemeinerung ist billiger als die Sorgfalt.
+#
+# Vor dem ersten Lauf die Dateien aus dem Datenpaket nach data/ kopieren,
+# siehe README.
+data/
+output/
+
+# Messskripte fuer einzelne Untersuchungen. Sie tragen absolute Pfade ins
+# Datenpaket und nennen Kunden beim Namen; das Ergebnis gehoert nach docs/,
+# das Skript nicht ins Repository.
+scratchpad/
+
+# Laufergebnisse, wo auch immer sie landen. Sie enthalten Begründungen, die aus
+# den Kundenlastenheften abgeleitet sind — dieselbe Schutzwürdigkeit wie die
+# Dokumente selbst. Die Befehle schreiben inzwischen nach output/; diese Regeln
+# sind das Netz darunter, weil `--out` einen freien Pfad annimmt.
+*_lauf.json
+*.json.lauf
+sieb_*.json
+final_*.json
+modellvergleich_*.json
+
+# Kundendokumente, wo auch immer sie liegen
+*.pdf
+*.PDF
+*.docx
+*.xlsx
+
+# Lokale Streamlit-Zwischenstände
+.streamlit/secrets.toml
+
+# Der aufgezeichnete Demo-Lauf. Er enthaelt die Prompts und damit das
+# Musterlastenheft, das aus Kundendokumenten abgeleitet ist — dieselbe
+# Schutzwuerdigkeit wie data/. Mit demo/erzeuge_lauf.py neu erzeugen; das
+# Beispieldokument selbst ist erfunden und darf mit.
+demo/beispiellauf.json
